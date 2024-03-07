@@ -31,8 +31,6 @@ Students will construct a test dataset to evaluate the performance of their trai
 **Discussion on Your Project**
 In the final report, students will discuss their project findings, including insights gained from data analysis, challenges encountered during model development, and recommendations for improving the predictive performance of the model. They will also reflect on the strengths and limitations of their approach and propose future research directions.
 
-
-//-------------------------------------------------------------------------------------------------------------------------
 **Evaluation Criteria and Deliverables**
 
 The project will be evaluated based on three main components:
@@ -43,3 +41,7 @@ The project will be evaluated based on three main components:
 
 **Performance with Test Data (10%):** The accuracy and robustness of the predictive model when evaluated using the test dataset.
  
+REPORT: Predicting House Prices in Philadelphia
+Tamara Estrada-Martinez
+
+
