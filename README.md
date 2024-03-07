@@ -27,6 +27,13 @@ Discussion:
 The Decision Tree Regressor had really high accuracy which may indicate that the model is overfitting. Depending on the application this model may be interpreted differently.
 PCA showed to be the best performing model, even as the number of components increased. The extreme improvement from RMSE and R^2 means that a lot of the features prior to data preprocessing were redundant. The values show that the data preprocessing was completed as accurately and efficiently as possible. The dataset was split into training and testing parts, as an 80-20 split, making sure that there's a set to evaluate the model's performance on unseen/unused data. 
 Within the PCA model was included a step-by-step approach that shows that the model gets better as more components are added, eventually leading to almost perfect predictions with 50 number components.
-The feature selection using SelectKBest with regression selected the top 30 features for the model. This identifies the features with the strongest relationship.
+The feature selection using SelectKBest with regression selected the top 30 features for the model. This identifies the features with the strongest relationship, eliminating noise. 
+
+**Potential Improvements**
+The data preprocessing step could have been a lot more intuative if their were more documentation helping the user understand the dataset. 
+Detailed documentation can help users make informed decisions during data cleaning and feature engineering which will improve model accuracy.
+Further regularization techniques could provide better models and in hopes prevent overfitting. 
+Futher feature engineering techniques could have also been applied to facilitate the analysis and help prevent noise.
+
 **Construction of Test Dataset and Evaluation of Your Model**
 Did not have enough time to complete my data set/analysis. Many apologies. 
