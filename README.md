@@ -1,47 +1,32 @@
-https://www.phila.gov/property/data/
-
-# ml-predicting-house-prices
-In this machine learning project, students will develop a model to predict the selling price of houses in Philadelphia. The project will involve various stages including data collection, preprocessing, feature engineering, model development, and evaluation.
-
-**Description**
-
-In this machine learning project, students will develop a model to predict the selling price of houses in Philadelphia. The project will involve various stages including data collection, preprocessing, feature engineering, model development, and evaluation.
- 
-
-**Data Collection**
-Students will gather data from various sources such as real estate websites, public databases, and APIs. The collected data will include information about the characteristics of houses such as location, size, and etc. (The number of train data needs to be more than 5000)
-
-
-**Data Preprocessing**
-The collected data will undergo preprocessing to clean and prepare it for analysis. This may involve handling missing values, removing outliers, and converting categorical variables into a suitable format for modeling.
- 
-
-**Feature Engineering**
-Students will engineer new features from the existing data to improve the performance of the predictive model. This may include creating interaction terms, transforming variables, or extracting meaningful information from the available features.
-
- 
-**Model Development**
-Using the preprocessed and engineered data, students will develop machine learning models to predict house prices. They will experiment with different algorithms such as linear regression, decision trees, random forests, or gradient boosting, and select the best-performing model based on evaluation metrics.
-
- 
-Construction of Test Dataset and Evaluation of Your Model (What data needs to be test data will be specified later. I probably ask you to construct most recent data for house sale as test data)
-Students will construct a test dataset to evaluate the performance of their trained model. They will apply the model to the test dataset and assess its predictive accuracy using appropriate evaluation metrics such as mean absolute error or root mean squared error.
-
-
-**Discussion on Your Project**
-In the final report, students will discuss their project findings, including insights gained from data analysis, challenges encountered during model development, and recommendations for improving the predictive performance of the model. They will also reflect on the strengths and limitations of their approach and propose future research directions.
-
-**Evaluation Criteria and Deliverables**
-
-The project will be evaluated based on three main components:
-
-**Code and Data (30%):** The quality and effectiveness of the code developed for data preprocessing, feature engineering, and model development. The quantity and quality of your data
-
-**Report (60%):** The completeness and clarity of the report, which should cover all mandatory items including data collection, preprocessing, feature engineering, model development, extraction of the test dataset, evaluation of the model, and discussion.
-
-**Performance with Test Data (10%):** The accuracy and robustness of the predictive model when evaluated using the test dataset.
- 
 REPORT: Predicting House Prices in Philadelphia
 Tamara Estrada-Martinez
+**Data ** from: https://www.phila.gov/property/data/
 
 
+This project employs multiple techniques, including feature scaling, dimensionality reduction, and model selection, to optimize prediction accuracy. The process is well organized, starting from preprocessing to model training and evaluation, providing insights into the performance of each technique.
+
+**Data Collection**
+I found a dataset on the website of The City of Philadelphia. The dataset is called, OPA Property Assessments. It contains 582942 rows of information and 82 columns of attributes.
+All I needed to do to be able to use this dataset was download the csv and read in the csv using pandas. The environment I used for this project was Google Colab. 
+This dataset contains all the relevant attributes for accurately predicting a house's market price.
+
+**Data Preprocessing**
+Data Preprocessing took up about 60% of the time to complete this project. There were many NaN values so in order to most effectively deal with them I compared each attribute to the 'market value' to see how much they affected/meant in relation to each other. The main removal came from dropping all other building types that weren't houses(e.g., apartments and hotels). All other attributes included a lot of handling missing values and removing various outliers. This often was a challenge because many of the attributes were not clearly defined. The latitude and longitude attributes had missing values but the best approach to this was to fill the missing values with the mean of the corresponding attribute. I also took the absolute value of longitude based on how longitude was going to be used as a feature in the machine learning model. 
+
+**Feature Engineering**
+Once my data was preprocessed, I began employing feature engineering techniques. For my categorical attributes I used Binary Encoding, for encoding simple non-numeric values I used one-hot encoding, and my numeric data stayed the same. I then standardized the categorical attributes and checked for outliers using z-score detection. Once the outliers were known I then dropped them from the dataframe. I used the threshold of -3 to 3 to determine if a value is an outlier or not. This was all done to help the models performance and accuracy.
+
+**Model Development**
+Overview:
+I developed various machine learning models for predicting ‘market_value’. Techniques include: Decision Tree Regression, Principal Component Analysis(PCA), and Linear Regression with feature selection through SelectKBest. 
+The decision tree model achieved a root mean square error of 2213.08 and a R^2 value of 0.9996. Which indicates that this model has a high level of accuracy. 
+The PCA model was tested with different numbers of components (20, 30, 40, 50) in efforts to reduce dimensionality before my regression models transformed the data. All component cases demonstrated a trend where the increasing number of components lead to a significant improvement in the models performance. The RMSR decreased and the R^2 increased as the number of components increased, indicating very good predictions. 
+The linear regression with feature selection model did make it difficult to to suggest if  the RMSE or R^2 were better predictors. Other models(PCA OR Decision Trees) were better fit to predict this relationship. 
+
+Discussion:
+The Decision Tree Regressor had really high accuracy which may indicate that the model is overfitting. Depending on the application this model may be interpreted differently.
+PCA showed to be the best performing model, even as the number of components increased. The extreme improvement from RMSE and R^2 means that a lot of the features prior to data preprocessing were redundant. The values show that the data preprocessing was completed as accurately and efficiently as possible. The dataset was split into training and testing parts, as an 80-20 split, making sure that there's a set to evaluate the model's performance on unseen/unused data. 
+Within the PCA model was included a step-by-step approach that shows that the model gets better as more components are added, eventually leading to almost perfect predictions with 50 number components.
+The feature selection using SelectKBest with regression selected the top 30 features for the model. This identifies the features with the strongest relationship.
+**Construction of Test Dataset and Evaluation of Your Model**
+Did not have enough time to complete my data set/analysis. Many apologies. 
